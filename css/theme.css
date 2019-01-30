@@ -1,0 +1,98 @@
+/** made by Bainesing with PhpStorm **/
+
+*{
+    padding:0;
+    margin:0;
+    cursor:text;
+    background: #000;
+}
+
+body{
+    font-family:微软雅黑;
+    font-size: medium;
+    color: #fff;
+    padding: 20px;
+}
+span{
+    margin-bottom: 10px;
+}
+
+/*** 命令用的css效果 ***/
+#start_command{
+    animation: write-command 1000ms both;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+.terminal .command {
+    width: 0%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #d18b00;
+    margin-bottom: 0px;
+    animation: write-command 1000ms both;
+}
+.terminal .command:before {
+    content: '# ';
+    color: #d18b00;
+}
+
+/*** 命令逐字输出的动画效果 ***/
+@keyframes write-command {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+/*** 提示与log用的css效果 ***/
+.log {
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.important_log{
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: cursor_flash 1000ms infinite ;
+}
+.unselect_log{
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+/*** 光标用的css效果 ***/
+.cursor{
+    color: #ffffff;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    animation: cursor_flash 300ms infinite ;
+}
+@keyframes cursor_flash {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    50.01% {
+        opacity: 0;
+    }
+    /* 注意这里定义50.01%立刻透明度为０，可以设置闪烁效果 */
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/*** 某些命令附带链接，连接的样式 ***/
+.command_link{
+    color: #d18b00;
+    cursor:pointer;
+}
