@@ -35,7 +35,7 @@ jQuery(window).load(function(){
         }, 5000);
         setTimeout(function () {
             //引入hacknet图形化桌面环境外部js文件
-            $.getScript("js/Orwell.js",function(){  //加载 hacknet.js 成功后，执行回调函数
+            $.getScript("js/hacknet.js",function(){  //加载 hacknet.js 成功后，执行回调函数
                 $('#cursor').before('<br/><span class="unselect_log">外部环境加载完成，正在启动....<br/></span>');
             });
         }, 6000);
@@ -396,25 +396,53 @@ jQuery(window).load(function(){
                             }, 100);
                             setTimeout(function () {
                                 $('#cursor').before("<br/>……&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8%");
+                                //获取目前的内容高度
+                                var h = document.body.clientHeight- window.innerHeight;
+                                //滚到最底端。
+                                document.documentElement.scrollTop = h;
                             }, 200);
                             setTimeout(function () {
                                 $('#cursor').before("<br/>……………&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21%");
+                                //获取目前的内容高度
+                                var h = document.body.clientHeight- window.innerHeight;
+                                //滚到最底端。
+                                document.documentElement.scrollTop = h;
                             }, 400);
                             setTimeout(function () {
                                 $('#cursor').before("<br/>…………………………&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;48%");
+                                //获取目前的内容高度
+                                var h = document.body.clientHeight- window.innerHeight;
+                                //滚到最底端。
+                                document.documentElement.scrollTop = h;
                             }, 800);
                             setTimeout(function () {
                                 $('#cursor').before("<br/>……………………………………………………&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;78%");
+                                //获取目前的内容高度
+                                var h = document.body.clientHeight- window.innerHeight;
+                                //滚到最底端。
+                                document.documentElement.scrollTop = h;
                             }, 1000);
                             setTimeout(function () {
                                 $('#cursor').before("<br/>……………………………………………………………&nbsp;&nbsp;&nbsp;&nbsp;96%");
+                                //获取目前的内容高度
+                                var h = document.body.clientHeight- window.innerHeight;
+                                //滚到最底端。
+                                document.documentElement.scrollTop = h;
                             }, 2000);
                             setTimeout(function () {
                                 $('#cursor').before("<br/>………………………………………………………………&nbsp;正在完成安装...");
+                                //获取目前的内容高度
+                                var h = document.body.clientHeight- window.innerHeight;
+                                //滚到最底端。
+                                document.documentElement.scrollTop = h;
                             }, 3000);
                             setTimeout(function () {
                                 $('#cursor').before("<br/>"+software+" 安装完成，正在重启 Nebula OS 。若长时间未响应，请手动重启操作系统。");
                                 $('#cursor').before('<br/><span class="command">C:\\System\\bin\\software \> </span>');
+                                //获取目前的内容高度
+                                var h = document.body.clientHeight- window.innerHeight;
+                                //滚到最底端。
+                                document.documentElement.scrollTop = h;
                             }, 3300);
                             setTimeout(function () {
                                 //重启
@@ -449,7 +477,7 @@ jQuery(window).load(function(){
                         $('#cursor').before("<br/>您的 soft 指令不完整。");
                         $('#cursor').before('<br/><span class="command">C:\\System\\bin\\software \> </span>');
                     }
-                    // var cd_index_apply = apply.substr(3,apply.length-3);
+                    // var cd_index_apply = apply.substr(s3,apply.length-3);
                     // $('#cursor').before("<br/>很抱歉，您没有权限切换到“ "+cd_index_apply+" ”目录。");
                     // $('#cursor').before('<br/><span class="command">C:\\System\\bin\\software \> </span>');
                 }
@@ -488,34 +516,13 @@ jQuery(window).load(function(){
 
     //===========关机NOS================
     function shutdownOs() {
-        if (navigator.userAgent.indexOf("MSIE") > 0) {
-            if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
-                $('#cursor').before('<br/>再见。');
-                window.opener = null; window.close();
-            }
-            else {
-                $('#cursor').before('<br/>再见。');
-                window.open('', '_top'); window.top.close();
-            }
-        }
-        else if (navigator.userAgent.indexOf("Firefox") > 0) {
-            $('#cursor').before('<br/>再见。');
-            window.location.href = 'about:blank '; //火狐默认状态非window.open的页面window.close是无效的
-        }
-        else if (navigator.userAgent.indexOf("Chrome") > 0) {
-            $('#cursor').before('<br/>再见。');
-            window.opener = null;
-            window.open('', '_self', '');
-            window.close();
-            $('#cursor').before('<br/>Chrome浏览器无法有效支持关闭指令，请手动关闭浏览器窗口。');
-            $('#cursor').before('<br/><span class="command">C:\\System\\bin\\software \> </span>');
-        }
-        else {
-            $('#cursor').before('<br/>再见。');
-            window.opener = null;
-            window.open('', '_self', '');
-            window.close();
-        }
+
+        $('#cursor').before('<br/>再见。');
+        window.opener = null;
+        window.open("","_self");
+        window.location.href="about:blank";
+        window.close();
+
     }
 
     //===========清屏================
