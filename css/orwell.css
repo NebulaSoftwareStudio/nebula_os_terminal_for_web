@@ -1,0 +1,138 @@
+/**
+ * Orwell OS Style develop by hanawa in 2019/01/31
+ */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei UI Light";
+}
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+.orwell-main_background{
+    background: url("../images/orwell/background/orwell-os-background.jpg");
+    color: #fff;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.default_cursor{
+    cursor: url('data:image/x-icon;base64,AAABAAEAICAAAAEAIAD8BAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAAlwSFlzAAAKxAAACsQBZm2C1AAABK5JREFUWIXtl11sFFUUx//nzsy2+8HukjbUUrYtS0UBlyJBhGBMCJqQikUMoREhmPhkgSYGNWCwgBVQfBAffTHRQBSIMYo0wTVRHkQRISJNKtr0g7Z0u922u7jdj5k79/iwNQHB7hYh+MBN7jzMPfec3/zv/87cIWbG3Wzirla/B/B/ANDzBbz06g5vaizpaz9/9vHQ/Ie/Lykr7+7q+B1ujwfBmtmIDPRjoL8XFRUBVFRWo7urE0ODEVTNmg2X140rfZeRHB2FUgrPNqzH82uevi5/XgWikcEPWNpfbWxYd0iwfaqvt3eBbhi4XXsnLwCxCHlcU+Zs3tI00LR1q4fN9E/RwcEGIgGh/fcVzJtBaGQrVuZIPOELzQ9lD7yz/+qcB2o+jcWGmi1LQtO0OwvADGJWkNJMACgNBAK+t1rejD26aOHOX87//K5pWRDi1pXIO1OBhQIEiDQAMmVJ4ff5S994fcflNfWrNkf6+86m0plqoQnQnQAQgkgIEMAMgMCwU5aUAKpe2LjB0bSlcRHYPp2IJ1Zouj5piPwmhFJgxQx2AhAggACVsSRJpbQVy5en396/r9ihIdx28ddndMNxewEAIhARgCwAlbvHxICSki1pK2ftQyFP857d0RKv+1hPV+dOZkBQYVoUACBELowyABjXiEzEsBWkJWEEyqc7d+1q7lq2dHFLfHT4mFTKpet6bsoELe+bkIQwiYQkkAMA5RLmIBQYgGIwWxnJHp/XO2X7a6/EgtUz1h75/EQwY5U/YTiKRid8vLwAgESuj8fy9aPjIMxsp0xpA1S6bt1zyRc3rV84OhQ5E4sNVwhNA/2LPQtYAqUAxYAqylX8Z6K/FREgIqSltCWzp25lXWLf7j33T3U7fxgZHl51LfAkAaDlOqmJghiArgvh1HWpEykAvppgEAf27g0sW7L4+FgyuV1K64Z5eT0AEAGCATIBFN9kHEQsHLqOjo6O020X26YpxbMtacJRXIySktKx8hkB3d/ZvUs3jDCAc5MEgI3c9iOMX4jBmi40AWimbVtKka0BSKfT6vDhw8HKYE2zw+n6sae3p9jpLLrCitOz5tbGpweqhyatACsWzIo4Z0RmZjJ0zdCFSDE4Szb7WQgJwFgQCs2vq1upnzl3ofbBUG1LKpOCLS2Ypgll27jZAbgQDzgAMsaVIF3XhC5EsrW1NR4Ohy8XG46YS9eMTCaDb09952prb/9kIBI5GB2Kwevzg8Ztmyt+I0D+JSAQARqBiwAYDiGGWk+2Og4efG96YEZlybx5oWx/X+/wF8ePf9l+6dL7JLQLLrcbggjKntC3hQEopZSCgq5rLgCxz44eLf3oyNGxJ1evbenv7qx/edu2EQY1mrb6zTfFC1Y2Mlbh56W8AKaZAZQHXrfLPnniRNmHh470PbW2YXUwWHW+bNp9exN/fi0ToyP2VL8fBAWp7IKLFwRQPTMYV1KONW5pKslYfGbNhk311TOD0Wh/N5RSWa/Xh+TVOJgZBX5/Jgewsq6+MR6Pl4XD3zzy2JKlH1dWVkWvJuIgIjAzWKlbOogUDOD1+//QdKNvbmhBT+m0sitmNnvT7XSrje79nN5tgL8AxWgP5EL4rFYAAAAASUVORK5CYII='), default;
+}
+
+.wait_cursor{
+    cursor: url("data:image/x-icon;base64,AAABAAEAICAAAAEAIAAcBAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAAlwSFlzAAAKxAAACsQBZm2C1AAAA85JREFUWIXtl1tsFFUch7+zu7M707rb27ZrYwKkAWytafClWl8whIZLjCHBNiYmxoT4YiKUROKTMaRg2iZ4CSE+KBCJTxYQKqgBlJt4wRgtSulNbAu1pXS37bbd2dm5/H1o9cmHWVODD0wy8zA5+c43c/7nnN9RIsK9vAL3tPf7Av8HgZDfhq++vlusdJKK8nJEhIXiVYAHgFKglMK2cgyNjnPk0EG1pAJhLcQzTc9S/0QDru2ACAIIEFQLKgFNIzVxh7f3v+cX61/AiBgoFOGQhoQ0gv/QxgUkEEDTI/+BgKGTNU0U0NfXy6muTwnrBkoJGXOOujVr2Ni4iWzWIhTyjfUvUFRcgiiFAiYn7/LF558RjcZAwdzcLFogzObGTYjrURIr9i3gexYURh8YnJ1NA6BpGrquo+s6kYiOoRtEFn+7mTHxPG/pBSri5a8NDY+kXc8jkagkXl6B4+QAj2AoRFXVSgB6+/sJhcMnllygvDzRlZ7LfDTw26C7fNkynlq3nqyVJZ2eofqRGhqebCCTzfLL9esDqx6u2eGX+/ec9nMf6TxR27qndWjeNMVyRa58f1XOnT8vE6mkiIgcPHxo9o09bdt7h+8E/TLzEuj5fSzQ8da7G9raO27dmZgQERFXRMxcTj44fNBr2bWr7bvuG0Y+zLyW4poVD3qbtzSdjRjGmU+OdpK1bQS4dOE8/Tf65p9/YduBx+uqzXyYee8FRoEh0WiRlZqexvUEBZiZLJoWdmNFJXl1/q8Ezp4+WdXT8+uGrc3PURgJEwDWNa6nNF5S9OH7B16+NjCs5QXMZ7yOnT6baNnZ8tXY+JiXnJ6Ri99ckQtfX5aBoZviiCv79rVn2t/ZvzYfpu+V8NrN2+rHH759esvWrQ1aOKz2tu6mt6cHRCgui/NKy3Ze3PaSvvfNji0Xr/50aW39Y76ynu8hmL47Uahy2aZH6+r0k12n6LvRRzQWI1YUJZ2e4ujHnQRDmlpZtbx5sL/H927kW+CP0ZH6eLykvjQao7v7ZwxDX8wEQoEe4dbIMJPJFLW11cXjo7cTSy4wPTOzMZ5IRG3PIzmZXHyrQBRBFWR+bp5UKkVZaVx3HLd5yQWmptJNlZUPhWzbxXFcXFdwHJec42I5HnbOxbNyxMsqArYrO/1yfRehmcmsKCyMoRSsWr0ayzRRgb/qTJE1LYqLS9ALDGzbrlxygVzOImfOY1tZWnZsR4kHuCwkw8DCMxBgeiqJnbP8YvPIhBGd48eOc+bclyx8twcIIgqlFvKnAhzHIT0751tA3T+a3Re41wJ/AmuyY7Spfr7XAAAAAElFTkSuQmCC"), default;
+}
+
+
+
+/*登录界面*/
+.left_icon_box{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    float: left;
+}
+.orwell_icon{
+    width: 20%;
+    height: 200px;
+    opacity: 0.9;
+    background: url("../images/orwell/logo.png");
+    background-size:cover;
+    margin-top: 50%;
+    float: left;
+    transform: translateY(-50%);
+    margin-left: 150px;
+}
+.show_orwell_icon{
+    animation: icon_hide_to_show 2254ms ease-in-out;
+}
+.orwell_name{
+    float: left;
+    font-size: 100pt;
+    color: #2a546d;
+    font-family: "Microsoft YaHei UI Light";
+    font-weight:normal;
+    font-stretch: ultra-condensed;
+    margin-top: 50%;
+    transform: translateY(-50%);
+    margin-left: 20px;
+}
+
+.hide_to_show{
+    animation: hide_to_show 500ms ease-in-out;
+}
+
+.orwell_content{
+    width: 50%;
+    float: left;
+    height: 70%;
+    margin-top: 25%;
+    transform: translateY(-50%);
+    border-left: 3px solid #ffffff;
+    box-sizing: border-box;
+    padding: 0;
+}
+.orwell_welcome_main{
+    font-size: 35pt;
+    color: #102c37;
+    line-height: 100%;
+    margin-left: 40px;
+    margin-top: 0;
+}
+.orwell_welcome_sub{
+    font-size: 25pt;
+    color: #285163;
+    margin-left: 40px;
+}
+
+.function_box{
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+}
+.function_button{
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+/*动画*/
+@keyframes icon_hide_to_show {
+    0%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 0.5;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.9;
+    }
+}
+
+@keyframes hide_to_show {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes show_to_hide {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
